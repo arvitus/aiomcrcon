@@ -1,16 +1,14 @@
 # aiomcrcon
-![Dynamic TOML Badge](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2Farvitus%2Faiomcrcon%2Fmaster%2Fpyproject.toml&query=%24.project%5B%22requires-python%22%5D&style=for-the-badge&label=Python&color=blue)
+![Python Versions](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2Farvitus%2Faiomcrcon%2Fmaster%2Fpyproject.toml&query=%24.project%5B%22requires-python%22%5D&style=for-the-badge&label=Python&color=blue)
 ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/arvitus/aiomcrcon?style=for-the-badge&color=green)
-<!--
-[![PyPI - Version](https://img.shields.io/pypi/v/aiomcrcon?style=for-the-badge&color=green)](https://pypi.org/project/aiomcrcon)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/aiomcrcon?style=for-the-badge&color=green)](https://pypi.org/project/aiomcrcon)
--->
-An async Minecraft RCON client library with support for fragmented responses.
+[![PyPI - Version](https://img.shields.io/pypi/v/py-aio-mcrcon?style=for-the-badge&color=green)](https://pypi.org/project/py-aio-mcrcon)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/py-aio-mcrcon?style=for-the-badge&color=green)](https://pypi.org/project/py-aio-mcrcon)
 
+An async Minecraft RCON client library with support for fragmented responses.
 
 ## Installing
 ```sh
-pip install git+https://github.com/arvitus/aiomcrcon
+pip install py-aio-mcrcon
 ```
 
 ## Example
@@ -24,7 +22,7 @@ async def main():
         response = await client.command("list")
 
     # Without context manager
-    client = aiomcrcon.Client("myserver.com", "password")
+    client = aiomcrcon.Client("myserver.com", "password") # port is optional, default is default RCON port
     await client.connect()
     response = await client.command("list")
     await client.close()
