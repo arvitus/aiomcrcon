@@ -2,9 +2,12 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build.targets.wheel]
+packages = ["aiomcrcon"]
+
 [project]
-name = "aiomcrcon"
-version = "1.0.0"
+name = "py-aio-mcrcon"
+version = "1.0.1"
 authors = [{ name = "3D_MAMA", email = "" }]
 description = "An async Minecraft RCON client library with support for fragmented responses."
 readme = "README.md"
