@@ -38,7 +38,7 @@ The Minecraft server implementation has a limit on the maximum response size of 
 *I do currently not know any other similar library that supports this feature.*
 
 ## Information regarding `asyncio.gather()`
-The client does technically support `asyncio.gather()`, but in practice it will currently cause errors, because of a [bug](https://bugs.mojang.com/browse/MC-87863) in the Minecraft server implementation. As long as this bug is not fixed, using the client with `asyncio.gather()` will execute the first command and return its response, but everything else will be ignored and the connection will be closed by the server. This causes all of the remaining or following commands to time out (raise TimeoutError) or wait indefinitely (based on timeout parameter). The client must be closed and connected to be used again.  
+The client does technically support `asyncio.gather()`, but in practice it will currently cause errors, because of a [bug](https://bugs.mojang.com/browse/MC-87863) in the Minecraft server implementation. As long as this bug is not fixed, using the client with `asyncio.gather()` will execute the first command and return its response, but everything else will be ignored and the connection will be closed by the server. This causes all of the remaining or following commands to time out (raise TimeoutError) or wait indefinitely (based on timeout parameter). The client must be closed and reconnected to be used again.  
 **This is not a bug in this library, but in the Minecraft server implementation!**
 
 ## Contributing
